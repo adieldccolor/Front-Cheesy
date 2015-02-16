@@ -1,0 +1,17 @@
+@{{ if(!$ajax): }}@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+	<title>{{ $title }} | {{ $slogan }}</title>
+	<meta content="{{$slogan}}" />
+	<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+
+	<!-- Stylesheets -->
+	<style> .animated { visibility: hidden; } </style>
+	<link rel="stylesheet" href="{{$path}}assets/css/animate.css">
+	<link rel="stylesheet" href="{{$path}}assets/css/style.css">
+</head>
+<body>
+@{{ endif; }}@

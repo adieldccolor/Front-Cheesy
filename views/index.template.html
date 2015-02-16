@@ -1,0 +1,42 @@
+@{{ if($ajax): }}@
+
+
+
+@{{ if(isset($_GET['file']) && !empty($_GET['file'])): }}@
+
+@{{ $data = ImagesController::new_image($_GET['file']); }}@
+{{ Route::json($data) }}
+
+@{{ else: }}@
+
+@{{ $data = ImagesController::list_files(30, 'images/'); }}@
+{{ Route::json($data) }}
+
+@{{ endif; }}@
+
+
+
+@{{ else: }}@
+
+<div class="container">
+	<div class="header">
+		<h3>Resize Images</h3>
+		<div class="actions">
+			<a href="javascript:;" class="reload hidden">Recargar</a>
+			<a href="javascript:;" class="start hidden">Procesar cola</a>
+		</div>
+		<div class="status"><small>Loading..</small></div>
+	</div>
+
+	<div class="list">
+		<ul></ul>
+	</div>
+
+	<div class="footer">
+		<h3>...</h3>
+	</div>
+
+</div>
+
+
+@{{ endif; }}@

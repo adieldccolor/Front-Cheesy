@@ -1,0 +1,11 @@
+@{{ if($ajax): }}@
+
+@{{ $data = ["error" => "Page missing."]; }}@
+{{ Route::json($data) }}
+
+
+@{{ else: }}@
+
+<h1>Page not found.</h1>
+
+@{{ endif; }}@
